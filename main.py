@@ -9,6 +9,11 @@
 #  | |              | || |              | || |              | |
 #  | '--------------' || '--------------' || '--------------' |
 #   '----------------'  '----------------'  '----------------' 
+# THIS WAS LAST UPDATED ON 4/26/23 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
+
+
+
+
 # imports
 from time import sleep
 from editor import *
