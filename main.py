@@ -17,6 +17,7 @@
 # imports
 from time import sleep
 from editor import *
+from calc import *
 # Colors
 RED = '\033[91m'
 GREEN = '\033[92m'
@@ -26,19 +27,37 @@ MAGENTA = '\033[95m'
 CYAN = '\033[96m'
 RESET = '\033[0m'
 # Printing nice NDX logo
-print(RED + " .-----------------. .----------------.  .----------------. \n| .--------------. || .--------------. || .--------------. |\n| | ____  _____  | || |  ________    | || |  ____  ____  | |\n| ||_   \|_   _| | || | |_   ___ `.  | || | |_  _||_  _| | |\n| |  |   \ | |   | || |   | |   `. \ | || |   \ \  / /   | |\n| |  | |\ \| |   | || |   | |    | | | || |    > `' <    | |\n| | _| |_\   |_  | || |  _| |___.' / | || |  _/ /'`\ \_  | |\n| ||_____|\____| | || | |________.'  | || | |____||____| | |\n| |              | || |              | || |              | |\n| '--------------' || '--------------' || '--------------' |\n '----------------'  '----------------'  '----------------' " + RESET)
-sleep(2)
+print(RED+" .-----------------. .----------------.  .----------------. ")
+sleep(0.15)
+print(RED+"| .--------------. || .--------------. || .--------------. |")
+sleep(0.15)
+print(RED+"| | ____  _____  | || |  ________    | || |  ____  ____  | |")
+sleep(0.15)
+print(RED+"| ||_   \|_   _| | || | |_   ___ `.  | || | |_  _||_  _| | |")
+sleep(0.15)
+print(RED+"| |  |   \ | |   | || |   | |   `. \ | || |   \ \  / /   | |")
+sleep(0.15)
+print(RED+"| |  | |\ \| |   | || |   | |    | | | || |    > `' <    | |")
+sleep(0.15)
+print(RED+"| | _| |_\   |_  | || |  _| |___.' / | || |  _/ /'`\ \_  | |")
+sleep(0.15)
+print(RED+"| ||_____|\____| | || | |________.'  | || | |____||____| | |")
+sleep(0.15)
+print(RED+"| |              | || |              | || |              | |")
+sleep(0.15)
+print(RED+"| '--------------' || '--------------' || '--------------' |")
+sleep(0.15)
+print(RED+" '----------------'  '----------------'  '----------------' ")
+sleep(0.5)
 
 while True:
-  print(BLUE + "\n\n1. Text Editor\n2. [type next thing here] \n3. [type next thing here]\n" + RESET)
+  print(BLUE + "\n\n1. Text Editor\n2. Calculator\n3. [type next thing here]\n" + RESET)
   i = input("Where do you want to go? (Type 1 for Item 1, 2 for 2, etc)\n")
   i=int(i)
   if i==1:
     tedit()
-    #put text editor script here
   if i==2:
-    print("hello")
-    #do next thing here
+    calc()
   if i==3:
     print("how are you?")
     #do next thing here
