@@ -8,13 +8,15 @@ def calc():
   RESET = '\033[0m'
   while True:
     number1=input(GREEN + "What is the first number?\n" + RESET)
-    operation=input(YELLOW + "What operation are you using? (A, S, M, D, E, or q to quit)\n" + RESET)
+    operation=input(YELLOW + "What operation are you using? (A, S, M, D, E, F, or q to quit)\n" + RESET)
     operation=operation.upper()
-    if operation=="Q":
-      break
-    number2=input(GREEN + "What is your second number?\n" + RESET)
     number1=int(number1)
     number2=int(number2)
+    if operation=="Q":
+      break
+    elif operation=="F":
+      print(number1!)
+    number2=input(GREEN + "What is your second number?\n" + RESET)
     print("")
     if operation=="A":
       print(number1+number2)
