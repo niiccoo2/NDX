@@ -17,7 +17,7 @@ def calc():
     elif operation=="F":
       print(math.factorial(number1))
     elif operation=="MAN":
-      print("TEST")  
+      print("TEST")
     number2=input(GREEN + "What is your second number?\n" + RESET)
     print("")
     number2=int(number2)
