@@ -17,6 +17,7 @@
 from time import sleep
 from editor import *
 from calc import *
+import math
 # NOTE: Need to fix sound
 #from pydub import AudioSegment
 #from pydub.playback import play
