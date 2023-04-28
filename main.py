@@ -1,3 +1,4 @@
+#/usr/bin/python3
 #   .-----------------. .----------------.  .----------------. 
 #  | .--------------. || .--------------. || .--------------. |
 #  | | ____  _____  | || |  ________    | || |  ____  ____  | |
@@ -9,15 +10,16 @@
 #  | |              | || |              | || |              | |
 #  | '--------------' || '--------------' || '--------------' |
 #   '----------------'  '----------------'  '----------------' 
-# THIS WAS LAST UPDATED ON 4/27/23 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
-
-
+# THIS WAS LAST UPDATED ON 4/28/23 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
 
 
 # imports
 from time import sleep
 from editor import *
 from calc import *
+# NOTE: Need to fix sound
+#from pydub import AudioSegment
+#from pydub.playback import play
 # Colors
 RED = '\033[91m'
 GREEN = '\033[92m'
@@ -26,6 +28,9 @@ BLUE = '\033[94m'
 MAGENTA = '\033[95m'
 CYAN = '\033[96m'
 RESET = '\033[0m'
+#Setting vars
+# NOTE: Need to fix sound part
+#song = AudioSegment.from_wav("oxp.wav")
 # Printing nice NDX logo
 print(RED+" .-----------------. .----------------.  .----------------. ")
 sleep(0.15)
@@ -49,7 +54,8 @@ print(RED+"| '--------------' || '--------------' || '--------------' |")
 sleep(0.15)
 print(RED+" '----------------'  '----------------'  '----------------' ")
 sleep(0.5)
-
+# NOTE: Need to fix sound
+#play(song)
 while True:
   print(BLUE + "\n\n1. Text Editor\n2. Calculator\n3. [type next thing here]\n" + RESET)
   i = input("Where do you want to go? (Type 1 for Item 1, 2 for 2, etc)\n")
