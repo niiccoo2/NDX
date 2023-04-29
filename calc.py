@@ -18,19 +18,20 @@ def calc():
       print(math.factorial(number1))
     elif operation=="MAN":
       print("TEST")
-    number2=input(GREEN + "What is your second number?\n" + RESET)
-    print("")
-    number2=int(number2)
-    if operation=="A":
-      print(number1+number2)
-    elif operation=="S":
-      print(number1-number2)
-    elif operation=="M":
-      print(number1*number2)
-    elif operation=="D":
-      print(number1/number2)
-    elif operation=="E":
-      print(number1^number2)
     else:
-      print(RED + "Wrong Operation!" + RESET)
+      number2=input(GREEN + "What is your second number?\n" + RESET)
+      print("")
+      number2=int(number2)
+      if operation=="A":
+        print(number1+number2)
+      elif operation=="S":
+        print(number1-number2)
+      elif operation=="M":
+        print(number1*number2)
+      elif operation=="D":
+        print(number1/number2)
+      elif operation=="E":
+        print(number1**number2)
+      else:
+        print(RED + "Wrong Operation!" + RESET)
     print("")
