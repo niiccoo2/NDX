@@ -20,6 +20,8 @@ from calc import *
 import math
 from rngg import *
 import pickle
+from rps import *
+from tic import *
 # NOTE: Need to fix sound
 #from pydub import AudioSegment
 #from pydub.playback import play
@@ -59,8 +61,9 @@ print(RED+" '----------------'  '----------------'  '----------------' ")
 sleep(0.5)
 # NOTE: Need to fix sound
 #play(song)
+#LOL, NOW THIS WONT WORK
 while True:
-  print(BLUE + "\n\n1. Text Editor\n2. Calculator\n3. Random Number Game\n" + RESET)
+  print(BLUE + "\n\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe" + RESET)
   i = input("Where do you want to go? (Type 1 for Item 1, 2 for 2, etc)\n")
   i=int(i)
   if i==1:
@@ -69,3 +72,7 @@ while True:
     calc()
   if i==3:
     RNGG()
+  if i==4:
+    rps()
+  if i==5:
+    tic()
