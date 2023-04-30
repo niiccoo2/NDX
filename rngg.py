@@ -11,7 +11,7 @@ def RNGG():
   CYAN = '\033[96m'
   RESET = '\033[0m'
   # Seting vars and randoms
-  RN=random.randint(1,100)
+  RN=random.randint(1,1000)
   RN=int(RN)
   guess=0
   Guesses=0
@@ -27,7 +27,7 @@ def RNGG():
     Guesses=int(Guesses)
     Guesses=Guesses+1
     #Guesses=str(Guesses)
-    guess=input(YELLOW+"Guess a number from one to one hundred! Guess the number to quit\n"+RESET)
+    guess=input(YELLOW+"Guess a number from one to one thousand! Guess the number to quit\n"+RESET)
     guess=int(guess)
     if RN == guess: 
       Highscore=int(Highscore)
@@ -42,7 +42,7 @@ def RNGG():
        print(MAGENTA+"Lower."+RESET)
     elif RN > guess:
        print (MAGENTA+"Higher."+RESET)
-    if guess > 100:
+    if guess > 1000:
       print(RED+"But that is over the limit!"+RESET)
     elif guess < 1:
       print(RED+"But that is under the minimum!"+RESET)
