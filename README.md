@@ -19,4 +19,8 @@ Word Guess: Try to guess that word in our ever growing list of words!!! Easy is 
 
 Magic 8 Ball: Ask it a yes or no question and it will give you an answer!
 
+ChatGPT: Enter the password (We may change it so if you think you shoud know it ask Nico) then use ChatGPT! Press q to quit at any prompt. **If people are spaming things for no reason to waste my $$$ you will be asked to stop using NDX**
+
+Density Calc: Enter the mass and Volume and the density will be calculated!
+
 By: Nico and Xavier
