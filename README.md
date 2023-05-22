@@ -9,6 +9,14 @@ Text Editor: Once started type file name to create or edit or 'l' to list files 
 
 Calculator: Once started type in your first number. Then type the fist letter of the operation you want to do! (A for +, S for -, M for *, D for ÷, E for exponent, F for factorial, ~~MAN for manual~~ **Not done!** OR q to Quit). Then enter the second number! (**This does not do anything for F or MAN**). Then your answer will be printed (**For E or MAN this will be printed after you type E or MAN**). Then the program restarts!
 
-Number Guessing Game: **Add info here**
+Number Guessing Game: Just guess the number and it will tell you if you are higher or lower. Guess the number to quit.
 
-By: Nico, Dylan, Xavier
+Rock Paper Scissors: Type "Rock", "Paper", or "Scissors". Thats it...
+
+Tic Tac Toe: Press the number on your key board for where you want to go and play Tic Tac Toe. **This is not done and may change!**
+
+Word Guess: Try to guess that word in our ever growing list of words!!! Easy is less than 100 words and Hard is more than 800!!! if you don't know the word press "w" and then "y" to see the word! **No Hints :)**
+
+Magic 8 Ball: Ask it a yes or no question and it will give you an answer!
+
+By: Nico and Xavier

@@ -8,7 +8,7 @@ def tedit():
     MAGENTA = '\033[95m'
     CYAN = '\033[96m'
     RESET = '\033[0m'
-
+    CLEAR = '\l'
     
     while True:
         file_name = input("Enter a file name to create or edit, 'l' to list text files, or 'q' to quit: ")

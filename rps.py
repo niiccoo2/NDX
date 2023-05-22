@@ -9,6 +9,7 @@ def rps():
   import random
   while True:
     RPS=input(MAGENTA+"Rock, Paper, or Scissors. Press q to quit\n"+RESET)
+    RPS=RPS.lower()
     if RPS=="q":
       break
     if RPS != "rock":
