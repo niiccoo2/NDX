@@ -26,6 +26,9 @@ from word import *
 from help import *
 from reac import *
 from chatGPT import *
+from density import *
+from snake import *
+#from playsound import playsound
 # NOTE: Need to fix sound
 #from pydub import AudioSegment
 #from pydub.playback import play
@@ -69,10 +72,10 @@ sleep(0.15)
 print(RED+" '----------------'  '----------------'  '----------------' ")
 sleep(0.5)
 # NOTE: Need to fix sound
-#play(song)
+#playsound('./windows-xp-startup-sound.mp3')
 #readline
 while True:
-  print(BLUE + "\n\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester" + RESET)
+  print(BLUE + "\n\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc" + RESET)
   i = input("Where do you want to go? (Type 1 for Item 1, 2 for 2, etc)\n")
   i=int(i)
   if i==0:
@@ -99,9 +102,13 @@ while True:
     print("Wrong")
     passn=passn+1
     if passn==3:
-      print("please wait and try again later")
+      print("Please wait and try again later.")
       wrongpass=int(wrongpass)
       sleep(100+(wrongpass*10))
       wrongpass=wrongpass+1
   if i==9:
     reac()
+  if i==10:
+    den()
+  if i==11:
+    snake()
