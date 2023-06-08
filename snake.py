@@ -28,7 +28,7 @@ def snake():
   global bre
   bre=0
   global location
-  location = 2
+  location = 15
   # Changed grid to gridcs; Saving grid a color strings not numbers getting changed to strings
   #grid = [0] * 30
   global gridcs
