@@ -7,6 +7,7 @@ def calc():
   MAGENTA = '\033[95m'
   CYAN = '\033[96m'
   RESET = '\033[0m'
+  #MTExNTc1Mzg2MDM2Mzk4MDg4MQ.GCaTO4.LfxA6u1VmJBqtM7JU0vsnUjH7b8kNqGXILw7lc
   while True:
     number1=input(GREEN + "What is the first number?\n" + RESET)
     operation=input(YELLOW + "What operation are you using? (A, S, M, D, E, F, MAN or q to quit)\n" + RESET)
