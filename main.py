@@ -52,7 +52,7 @@ ndxfast=0
 # NOTE: Need to fix sound part
 #song = AudioSegment.from_wav("oxp.wav")
 
-ndxfast=1 # Uncoment this to change NDX Logo to fast mode.
+#ndxfast=1 # Uncoment this to change NDX Logo to fast mode.
 
 if ndxfast==1:
   #Printing fast NDX logo
