@@ -25,9 +25,14 @@ def snake():
   t.shape("blank")
   clock=0
   move = 'a'
+  global bre
+  bre=0
   global location
-  location = 30
-  grid = [0] * 30
+  location = 2
+  # Changed grid to gridcs; Saving grid a color strings not numbers getting changed to strings
+  #grid = [0] * 30
+  global gridcs
+  gridcs = ['yellow'] * 30  # Initialize the color list with yellow for all squares
   gridpos = [[1,-1], [42,-1], [83,-1], [124,-1], [165,-1], [206,-1], [1,-42], [42,-42], [83,-42], [124,-42], [165,-42], [206,-42], [1,-83], [42,-83], [83,-83], [124,-83], [165,-83], [206,-83], [1,-124], [42,-124], [83,-124], [124,-124], [165,-124], [206,-124], [1,-165], [42,-165], [83,-165], [124,-165], [165,-165], [206,-165]]
   # Asking about replit
   rep=input("Are you on replit? (Y/n)\n")
@@ -41,16 +46,17 @@ def snake():
     t.goto(one, two)
     t.pendown()
   def drawgrid(grid):
-    gridcs = ['yellow'] * 30  # Initialize the color list with yellow for all squares
-    for k in range(30):
-        if grid[k] == 0:
-            gridcs[k] = 'light gray'
+    #gridcs = ['yellow'] * 30  # Initialize the color list with yellow for all squares
+    global gridcs
+    #for k in range(30):
+        #if grid[k] == 0:
+            #gridcs[k] = 'light gray'
             #print("white")
-        elif grid[k] == 1:
-            gridcs[k] = 'dark green'
+        #elif grid[k] == 1:
+            #gridcs[k] = 'dark green'
             #print("green")
-        elif grid[k] == 2:
-            gridcs[k] = 'red'
+        #elif grid[k] == 2:
+            #gridcs[k] = 'red'
             #print("red")
     for l in range(30):
         c = gridcs[l]
@@ -66,7 +72,39 @@ def snake():
         t.end_fill()
   def left():
     global location
+    save=0
+    location=save
     location = location-1
+    if location <= -1:
+       #location=save
+       location=0
+  def right():
+    global location
+    save=0
+    location=save
+    location = location+1
+    if location >= 30:
+       #location=save
+       location=29
+  def up():
+    global location
+    save=0
+    location=save
+    location = location-6
+    if location <= -1:
+       #location=save
+       location=0
+  def down():
+    global location
+    save=0
+    location=save
+    location = location+6
+    if location >= 30:
+       #location=save
+       location=29
+  def qu():
+     global bre
+     bre=1
   # Telling replit users to open the "Output"
   if rep == 1:
     ran = input("Open the 'Output' window. (Press 'enter' to continue.)")
@@ -78,20 +116,26 @@ def snake():
     t.rt(90)
     t.fd(206)
     t.rt(90)
+    #location=location-1
   while True:
     # Grid list format (5x5) First row of 5 then next and next etc
     #move = input("W, A, S, D: ")
     #move = move.lower()
-    grid = [0]*30
-    screen.onkey(left, "Left")
-    screen.listen()
-    location=input("Where: ")
-    location=int(location)
-    location=location-1
-    grid[location]=1
-    drawgrid(grid)
+    gridcs = ['light gray']*30
+    t.screen.onkey(left, "Left")
+    t.screen.onkey(right, "Right")
+    t.screen.onkey(up, "Up")
+    t.screen.onkey(down, "Down")
+    t.screen.onkey(qu, "q")
+    t.screen.listen()
+    #location=input("Where: ")
+    #location=int(location)
+    gridcs[location]='green'
+    if bre==1:
+       break
+    drawgrid(gridcs)
   # Telling repit users to close the "Output"
   if rep == 1:
-    ran = input(RED+"Press enter to close the output!")
-    print("Closing the output window..."+RESET)
+    ran = input("Press enter to close the output!")
+    print("Closing the output window...")
     turtle.bye()
