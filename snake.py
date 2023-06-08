@@ -72,32 +72,28 @@ def snake():
         t.end_fill()
   def left():
     global location
-    save=0
-    location=save
+    save=location
     location = location-1
     if location <= -1:
        #location=save
        location=0
   def right():
     global location
-    save=0
-    location=save
+    save=location
     location = location+1
     if location >= 30:
        #location=save
        location=29
   def up():
     global location
-    save=0
-    location=save
+    save=location
     location = location-6
     if location <= -1:
        #location=save
        location=0
   def down():
     global location
-    save=0
-    location=save
+    save=location
     location = location+6
     if location >= 30:
        #location=save
