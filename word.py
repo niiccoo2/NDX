@@ -1,4 +1,3 @@
-
 def word():
   import random
   RED = '\033[91m'

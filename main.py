@@ -10,7 +10,7 @@
 #  | |              | || |              | || |              | |
 #  | '--------------' || '--------------' || '--------------' |
 #   '----------------'  '----------------'  '----------------' 
-# THIS WAS LAST UPDATED ON 5/22/23 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
+# THIS WAS LAST UPDATED ON 6/6/2023 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
 
 # imports
 from time import sleep
@@ -23,15 +23,17 @@ import pickle
 from rps import *
 from tic import *
 from word import *
+#from pydub.playback 
 from help import *
 from reac import *
 from chatGPT import *
 from density import *
 from snake import *
+from gambl import *
+from pig import *
 #from playsound import playsound
 # NOTE: Need to fix sound
-#from pydub import AudioSegment
-#from pydub.playback import play
+#from pydub import Audiimport play
 # Colors
 RED = '\033[91m'
 GREEN = '\033[92m'
@@ -46,36 +48,53 @@ passn=0
 wrongpass=30
 wrongpass=str(wrongpass)
 passn=int(passn)
+ndxfast=0
 # NOTE: Need to fix sound part
 #song = AudioSegment.from_wav("oxp.wav")
-# Printing nice NDX logo
-print(RED+" .-----------------. .----------------.  .----------------. ")
-sleep(0.15)
-print(RED+"| .--------------. || .--------------. || .--------------. |")
-sleep(0.15)
-print(RED+"| | ____  _____  | || |  ________    | || |  ____  ____  | |")
-sleep(0.15)
-print(RED+"| ||_   \|_   _| | || | |_   ___ `.  | || | |_  _||_  _| | |")
-sleep(0.15)
-print(RED+"| |  |   \ | |   | || |   | |   `. \ | || |   \ \  / /   | |")
-sleep(0.15)
-print(RED+"| |  | |\ \| |   | || |   | |    | | | || |    > `' <    | |")
-sleep(0.15)
-print(RED+"| | _| |_\   |_  | || |  _| |___.' / | || |  _/ /'`\ \_  | |")
-sleep(0.15)
-print(RED+"| ||_____|\____| | || | |________.'  | || | |____||____| | |")
-sleep(0.15)
-print(RED+"| |              | || |              | || |              | |")
-sleep(0.15)
-print(RED+"| '--------------' || '--------------' || '--------------' |")
-sleep(0.15)
-print(RED+" '----------------'  '----------------'  '----------------' ")
-sleep(0.5)
+
+#ndxfast=1 # Uncoment this to change NDX Logo to fast mode.
+
+if ndxfast==1:
+  #Printing fast NDX logo
+  print(RED+" .-----------------. .----------------.  .----------------. ")
+  print(RED+"| .--------------. || .--------------. || .--------------. |")
+  print(RED+"| | ____  _____  | || |  ________    | || |  ____  ____  | |")
+  print(RED+"| ||_   \|_   _| | || | |_   ___ `.  | || | |_  _||_  _| | |")
+  print(RED+"| |  |   \ | |   | || |   | |   `. \ | || |   \ \  / /   | |")
+  print(RED+"| |  | |\ \| |   | || |   | |    | | | || |    > `' <    | |")
+  print(RED+"| | _| |_\   |_  | || |  _| |___.' / | || |  _/ /'`\ \_  | |")
+  print(RED+"| ||_____|\____| | || | |________.'  | || | |____||____| | |")
+  print(RED+"| |              | || |              | || |              | |")
+  print(RED+" '----------------'  '----------------'  '----------------' ")
+else:
+  # Printing nice NDX logo
+  print(RED+" .-----------------. .----------------.  .----------------. ")
+  sleep(0.15)
+  print(RED+"| .--------------. || .--------------. || .--------------. |")
+  sleep(0.15)
+  print(RED+"| | ____  _____  | || |  ________    | || |  ____  ____  | |")
+  sleep(0.15)
+  print(RED+"| ||_   \|_   _| | || | |_   ___ `.  | || | |_  _||_  _| | |")
+  sleep(0.15)
+  print(RED+"| |  |   \ | |   | || |   | |   `. \ | || |   \ \  / /   | |")
+  sleep(0.15)
+  print(RED+"| |  | |\ \| |   | || |   | |    | | | || |    > `' <    | |")
+  sleep(0.15)
+  print(RED+"| | _| |_\   |_  | || |  _| |___.' / | || |  _/ /'`\ \_  | |")
+  sleep(0.15)
+  print(RED+"| ||_____|\____| | || | |________.'  | || | |____||____| | |")
+  sleep(0.15)
+  print(RED+"| |              | || |              | || |              | |")
+  sleep(0.15)
+  print(RED+"| '--------------' || '--------------' || '--------------' |")
+  sleep(0.15)
+  print(RED+" '----------------'  '----------------'  '----------------' ")
+  sleep(0.5)
 # NOTE: Need to fix sound
 #playsound('./windows-xp-startup-sound.mp3')
 #readline
 while True:
-  print(BLUE + "\n\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc" + RESET)
+  print(BLUE + "\n\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc\n11. Snake\n12. Gambling >:\n13. Pig Latin Translator" + RESET)
   i = input("Where do you want to go? (Type 1 for Item 1, 2 for 2, etc)\n")
   i=int(i)
   if i==0:
@@ -112,3 +131,7 @@ while True:
     den()
   if i==11:
     snake()
+  if i==12:
+    print("Not working right now.")
+  if i==13:
+    pig()
