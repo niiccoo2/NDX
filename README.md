@@ -23,4 +23,6 @@ ChatGPT: Enter the password (We may change it so if you think you shoud know it 
 
 Density Calc: Enter the mass and Volume and the density will be calculated!
 
+If anyone wants to help write the readme any help will be appreciated!
+
 By: Nico and Xavier
