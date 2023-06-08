@@ -24,10 +24,13 @@ def snake():
   t.screen.title("Snake")
   t.shape("blank")
   clock=0
-  grid = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  move = 'a'
+  global location
+  location = 30
+  grid = [0] * 30
   gridpos = [[1,-1], [42,-1], [83,-1], [124,-1], [165,-1], [206,-1], [1,-42], [42,-42], [83,-42], [124,-42], [165,-42], [206,-42], [1,-83], [42,-83], [83,-83], [124,-83], [165,-83], [206,-83], [1,-124], [42,-124], [83,-124], [124,-124], [165,-124], [206,-124], [1,-165], [42,-165], [83,-165], [124,-165], [165,-165], [206,-165]]
   # Asking about replit
-  rep=input(+YELLOW+"Are you on replit? (Y/n)\n"+RESET)
+  rep=input("Are you on replit? (Y/n)\n")
   if rep == "n":
     rep = 0
   else:
@@ -61,9 +64,12 @@ def snake():
           #print("dawing squares")
           t.rt(90)
         t.end_fill()
+  def left():
+    global location
+    location = location-1
   # Telling replit users to open the "Output"
   if rep == 1:
-    ran = input(YELLOW+"Open the 'Output' window. (Press 'enter' to continue.)"+RESET)
+    ran = input("Open the 'Output' window. (Press 'enter' to continue.)")
   time.sleep(5)
   # Making Grid outline
   goto(0,0)
@@ -74,16 +80,16 @@ def snake():
     t.rt(90)
   while True:
     # Grid list format (5x5) First row of 5 then next and next etc
+    #move = input("W, A, S, D: ")
+    #move = move.lower()
+    grid = [0]*30
+    screen.onkey(left, "Left")
+    screen.listen()
+    location=input("Where: ")
+    location=int(location)
+    location=location-1
+    grid[location]=1
     drawgrid(grid)
-    time.sleep(2)
-    if clock==0:
-      clock=1
-    else:
-      clock=0
-    if clock==0:
-      grid = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
-    if clock==1:
-      grid = [2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2]
   # Telling repit users to close the "Output"
   if rep == 1:
     ran = input(RED+"Press enter to close the output!")

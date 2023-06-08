@@ -10,6 +10,7 @@ def gambl():
     while money < max:
       numberracers=input("do you want 3, 5, or 10 line racers in the race you are betting on? The    more racers there are the more money you make. ")
       money=50
+      max3=0
       money=int(money)
       if numberracers == "3":
         bet3=input("whitch line do you want to bet on. 1, 2 or 3 from the top? ")
@@ -20,6 +21,12 @@ def gambl():
         print("-"*top3)
         print("-"*middle3)
         print("-"*bottom3)
+        if top3 > middle3:
+          max2nd3="top3"
+        else:
+          max2nd3="middle3"
+          if bottom3 > max2nd3 :
+            max3="bottom3"
         if bet3 == max(top3, bottom3, middle3):
           money=(bet*numberracers)+money
           money=str(money)
