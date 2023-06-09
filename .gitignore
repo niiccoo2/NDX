@@ -15,3 +15,6 @@ __pycache__/snake.cpython-311.pyc
 venv/*
 replit.nix
 .replit
+__pycache__/*
+poetry.lock
+pyproject.toml
