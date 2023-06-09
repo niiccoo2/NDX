@@ -9,6 +9,7 @@ def snake():
   #import os # Not used
   import time
   import turtle
+  import random
   # Setting vars
   RED = '\033[91m'
   GREEN = '\033[92m'
@@ -17,7 +18,7 @@ def snake():
   MAGENTA = '\033[95m'
   CYAN = '\033[96m'
   RESET = '\033[0m'
-  turtle.setup(550, 550)
+  #turtle.setup(550, 550)
   t=turtle.Turtle()
   turtle.tracer(0, 0)
   home = [0,0]
@@ -29,7 +30,8 @@ def snake():
   global bre
   bre=0
   global location
-  location = 15
+  location = 14
+  apple = 4
   # Changed grid to gridcs; Saving grid a color strings not numbers getting changed to strings
   #grid = [0] * 30
   global gridcs
@@ -109,6 +111,12 @@ def snake():
     t.screen.onkey(qu, "q")
     t.screen.listen()
     gridcs[location]='green'
+    if apple == location:
+      while True:
+        apple = random.randint(0,29)
+        if apple != location:
+          break
+    gridcs[apple]='red'
     if bre==1:
        break
     drawgrid(gridcs)
