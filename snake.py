@@ -6,7 +6,7 @@ def snake():
   #   |____/|_| |_|\__,_|_|\_\___|
   #                               
   # Imports
-  import os
+  #import os # Not used
   import time
   import turtle
   # Setting vars
