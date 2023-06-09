@@ -12,3 +12,6 @@ __pycache__/help.cpython-311.pyc
 __pycache__/word.cpython-311.pyc
 __pycache__/tic.cpython-311.pyc
 __pycache__/snake.cpython-311.pyc
+venv/*
+replit.nix
+.replit
