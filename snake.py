@@ -19,9 +19,10 @@ def snake():
   RESET = '\033[0m'
   turtle.setup(550, 550)
   t=turtle.Turtle()
+  turtle.tracer(0, 0)
   home = [0,0]
   t.speed(0)
-  t.screen.title("Snake")
+  t.screen.title("Snake (NDX)")
   t.shape("blank")
   clock=0
   move = 'a'
@@ -70,41 +71,42 @@ def snake():
           #print("dawing squares")
           t.rt(90)
         t.end_fill()
+    turtle.update()
   def left():
     global location
     save=location
     location = location-1
     if location <= -1:
-       #location=save
-       location=0
+       location=save
+       #location=0
   def right():
     global location
     save=location
     location = location+1
     if location >= 30:
-       #location=save
-       location=29
+       location=save
+       #location=29
   def up():
     global location
     save=location
     location = location-6
     if location <= -1:
-       #location=save
-       location=0
+       location=save
+       #location=0
   def down():
     global location
     save=location
     location = location+6
     if location >= 30:
-       #location=save
-       location=29
+       location=save
+       #location=29
   def qu():
      global bre
      bre=1
   # Telling replit users to open the "Output"
   if rep == 1:
     ran = input("Open the 'Output' window. (Press 'enter' to continue.)")
-  time.sleep(5)
+  #time.sleep(5)
   # Making Grid outline
   goto(0,0)
   for i in range(2):
