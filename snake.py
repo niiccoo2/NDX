@@ -49,16 +49,6 @@ def snake():
   def drawgrid(grid):
     #gridcs = ['yellow'] * 30  # Initialize the color list with yellow for all squares
     global gridcs
-    #for k in range(30):
-        #if grid[k] == 0:
-            #gridcs[k] = 'light gray'
-            #print("white")
-        #elif grid[k] == 1:
-            #gridcs[k] = 'dark green'
-            #print("green")
-        #elif grid[k] == 2:
-            #gridcs[k] = 'red'
-            #print("red")
     for l in range(30):
         c = gridcs[l]
         c = str(c)
@@ -68,7 +58,6 @@ def snake():
         t.begin_fill()
         for i in range(4):
           t.fd(40)
-          #print("dawing squares")
           t.rt(90)
         t.end_fill()
     turtle.update()
@@ -78,28 +67,24 @@ def snake():
     location = location-1
     if location <= -1:
        location=save
-       #location=0
   def right():
     global location
     save=location
     location = location+1
     if location >= 30:
        location=save
-       #location=29
   def up():
     global location
     save=location
     location = location-6
     if location <= -1:
        location=save
-       #location=0
   def down():
     global location
     save=location
     location = location+6
     if location >= 30:
        location=save
-       #location=29
   def qu():
      global bre
      bre=1
@@ -116,9 +101,6 @@ def snake():
     t.rt(90)
     #location=location-1
   while True:
-    # Grid list format (5x5) First row of 5 then next and next etc
-    #move = input("W, A, S, D: ")
-    #move = move.lower()
     gridcs = ['light gray']*30
     t.screen.onkey(left, "Left")
     t.screen.onkey(right, "Right")
@@ -126,8 +108,6 @@ def snake():
     t.screen.onkey(down, "Down")
     t.screen.onkey(qu, "q")
     t.screen.listen()
-    #location=input("Where: ")
-    #location=int(location)
     gridcs[location]='green'
     if bre==1:
        break
