@@ -32,7 +32,7 @@ def snake():
   global location
   location = 14
   apple = 4
-  # Changed grid to gridcs; Saving grid a color strings not numbers getting changed to strings
+  # Changed grid to gridcs; Saving grid as color strings not numbers getting changed to strings
   #grid = [0] * 30
   global gridcs
   gridcs = ['yellow'] * 30  # Initialize the color list with yellow for all squares
