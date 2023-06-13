@@ -33,7 +33,6 @@ def snake():
   location = 14
   apple = 4
   # Changed grid to gridcs; Saving grid as color strings not numbers getting changed to strings
-  #grid = [0] * 30
   global gridcs
   gridcs = ['yellow'] * 30  # Initialize the color list with yellow for all squares
   gridpos = [[1,-1], [42,-1], [83,-1], [124,-1], [165,-1], [206,-1], [1,-42], [42,-42], [83,-42], [124,-42], [165,-42], [206,-42], [1,-83], [42,-83], [83,-83], [124,-83], [165,-83], [206,-83], [1,-124], [42,-124], [83,-124], [124,-124], [165,-124], [206,-124], [1,-165], [42,-165], [83,-165], [124,-165], [165,-165], [206,-165]]
