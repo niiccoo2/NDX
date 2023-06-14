@@ -7,7 +7,6 @@ def snake():
   #                               
   # Imports
   #import os # Not used
-  import time
   import turtle
   import random
   # Setting vars
@@ -31,7 +30,7 @@ def snake():
   bre=0
   global location
   location = 14
-  apple = 4
+  apple = 17
   # Changed grid to gridcs; Saving grid as color strings not numbers getting changed to strings
   global gridcs
   gridcs = ['yellow'] * 30  # Initialize the color list with yellow for all squares
