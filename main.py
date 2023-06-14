@@ -10,28 +10,13 @@
 #  | |              | || |              | || |              | |
 #  | '--------------' || '--------------' || '--------------' |
 #   '----------------'  '----------------'  '----------------' 
-# THIS WAS LAST UPDATED ON 6/9/2023 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
+# THIS WAS LAST UPDATED ON 6/14/2023 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
 
 # imports
 from time import sleep
-from editor import *
-from calc import *
 import math
-from signout import *
-from rngg import *
-from ball8 import *
 import pickle
-from rps import *
-from tic import *
-from word import *
-#from pydub.playback 
-from help import *
-from reac import *
-from chatGPT import *
-from density import *
-from snake import *
-from gambl import *
-from pig import *
+from part1 import *
 #from playsound import playsound
 # NOTE: Need to fix sound
 #from pydub import Audiimport play

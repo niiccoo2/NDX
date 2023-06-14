@@ -23,6 +23,8 @@ ChatGPT: Enter the password (We may change it so if you think you shoud know it 
 
 Density Calc: Enter the mass and Volume and the density will be calculated!
 
+All short .py files have been put into part1.py all new short files (Less than 100 lines) will be put into part2.py
+
 If anyone wants to help write the readme any help will be appreciated!
 
 By: Nico and Xavier
