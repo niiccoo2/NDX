@@ -456,3 +456,27 @@ def word():
       break
     if guess != correct:
       print(RED+"You guessed the wrong word"+RESET)
+
+
+def madlib():
+  #intro
+  a=input("Welcome to Mad-Libs (Press Enter To Continue)")
+  a=input("First let's get your input for the story!")
+  
+  #Getting inputs
+  number1=input("Any Number: ")
+  place1=input("The name of a place: ")
+  noun1=input("Noun: ")
+  adjective1=input("Adjective: ")
+  number2=input("Number From 0 to 99: ")
+  adjective2=input("Adjective: ")
+  interjection1=input("Interjection: ")
+  nameofcandy1=input("Name of candy: ")
+  number3=input("Number: ")
+  number4=input("Number: ")
+  
+  a=input("\n\n\n----------TIME-FOR-THE-STORY----------\n")
+  
+  #printing story
+  print('One day I was taking a '+number1+' Mile walk, when I walked by '+place1+' I saw a '+noun1+' by the path, But I kept walking, then I got tired of walking so I got in the '+adjective1+' Car that I found. I was driving the '+adjective1+' Car and I needed to eat so I stopped at a '+number2+'-11. The '+adjective2+' Worker Said “'+interjection1+', I never thought I would see YOU!” “That was odd,” I said under my breath. I continued until I saw tons of '+nameofcandy1+'’s I grabbed '+number3+' '+nameofcandy1+'’s and brought them to the counter, “That will be $'+number4+'” said the worker. “OK!” I said')
+  
