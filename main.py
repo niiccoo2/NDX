@@ -80,8 +80,10 @@ else:
 #playsound('./windows-xp-startup-sound.mp3')
 #readline
 while True:
-  print(BLUE + "\n\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc\n11. Snake\n12. Gambling >:\n13. Pig Latin Translator\n14. Sign Out" + RESET)
+  print(BLUE + "\n\nQ: Quit\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc\n11. Snake\n12. Gambling >:\n13. Pig Latin Translator\n14. Sign Out" + RESET)
   i = input("Where do you want to go? (Type 1 for Item 1, 2 for 2, etc)\n")
+  if i.lower()=='q':
+    quit()
   i=int(i)
   if i==0:
     display_help()
