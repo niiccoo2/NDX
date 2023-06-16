@@ -394,7 +394,6 @@ def signout():
   filename = "signout.pickle"
   with open(filename, "rb") as f:
     list = pickle.load(f)
-  #list = ["nico", "bathroom", "8:40", "8:47"]
   while True:
     name = input("Name: ")
     name = name.lower()
@@ -403,6 +402,9 @@ def signout():
       name = input("Name: ")
     if name == "quit":
       break
+    if name == 'reset':
+      list = ["nico", "bathroom", "8:40", "8:47"]
+      name = input("Name: ")
     location = input("Destination: ")
     location = location.lower()
     timeout = input("Time Out: ")
@@ -434,7 +436,7 @@ def word():
   wordlist = ["balloon", "air", "spaceship", "person", "nico", "orange", "spell", "leaf", "compass", "bear", "code", "wilson", "ndx", "edit", "talk", "beach", "well", "stop", "annoying", "please", "wall", "smell", "smart", "fat", "bad", "mean", "grenade", "electric","aardvark","pencil"]
   with open('wordlist.txt') as input_file:
     long_list = [line.strip() for line in input_file]
-  mode = input("Hard or Easy? (1/2)")
+  mode = input("Hard or Easy? (1/2) ")
   mode = int(mode)
   if mode == 1:
     wordlist=long_list
@@ -479,4 +481,4 @@ def madlib():
   
   #printing story
   print('One day I was taking a '+number1+' Mile walk, when I walked by '+place1+' I saw a '+noun1+' by the path, But I kept walking, then I got tired of walking so I got in the '+adjective1+' Car that I found. I was driving the '+adjective1+' Car and I needed to eat so I stopped at a '+number2+'-11. The '+adjective2+' Worker Said “'+interjection1+', I never thought I would see YOU!” “That was odd,” I said under my breath. I continued until I saw tons of '+nameofcandy1+'’s I grabbed '+number3+' '+nameofcandy1+'’s and brought them to the counter, “That will be $'+number4+'” said the worker. “OK!” I said')
-  
+  ran = input("Press Enter to Continue")
