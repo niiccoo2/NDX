@@ -17,6 +17,7 @@ from time import sleep
 import math
 import pickle
 from part1 import *
+from snake import *
 #from playsound import playsound
 # NOTE: Need to fix sound
 #from pydub import Audiimport play
