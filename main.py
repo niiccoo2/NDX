@@ -38,8 +38,21 @@ passn=int(passn)
 ndxfast=0
 # NOTE: Need to fix sound part
 #song = AudioSegment.from_wav("oxp.wav")
-
+ndxfast=0
+#ndxfast = global ndxfast
 #ndxfast=1 # Uncoment this to change NDX Logo to fast mode.
+
+# Settings
+
+def settings():
+  print('Settings:\n1. Fast Logo\nMore settings will be added!')
+  pick=input('Pick a setting: ')
+
+  if pick==1:
+    print("(1 is On, Anything else is off.)")
+    print("Current value: ")
+
+
 
 if ndxfast==1:
   #Printing fast NDX logo
@@ -81,10 +94,12 @@ else:
 #playsound('./windows-xp-startup-sound.mp3')
 #readline
 while True:
-  print(BLUE + "\n\nQ: Quit\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc\n11. Snake\n12. Gambling >:\n13. Pig Latin Translator\n14. Sign Out\n15. Mad-Libs\n16. Weather" + RESET)
+  print(BLUE + "\n\nQ: Quit\nS. Settings\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc\n11. Snake\n12. Gambling >:\n13. Pig Latin Translator\n14. Sign Out\n15. Mad-Libs\n16. Weather" + RESET)
   i = input("Where do you want to go? (Type 1 for Item 1, 2 for 2, etc)\n")
   if i.lower()=='q':
     quit()
+  if i.lower()=='s':
+    settings()
   i=int(i)
   if i==0:
     display_help()
