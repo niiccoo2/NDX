@@ -58,32 +58,32 @@ def calc():
 
 #-------------------------------------- ChatGPT --------------------------------------#
 
-def chatGPT():
-  import openai
-  openai.api_key = "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"
-  RED = '\033[91m'
-  GREEN = '\033[92m'
-  YELLOW = '\033[93m'
-  BLUE = '\033[94m'
-  MAGENTA = '\033[95m'
-  CYAN = '\033[96m'
-  RESET = '\033[0m'
-  messages = [ {"role": "system", "content": 
-              "You are a intelligent assistant."} ]
-  while True:
-      message = input(YELLOW+">>>"+RESET)
-      if message == "q":
-        break
-      if message:
-          messages.append(
-              {"role": "user", "content": message},
-          )
-          chat = openai.ChatCompletion.create(
-              model="gpt-3.5-turbo", messages=messages
-          )
-      reply = chat.choices[0].message.content
-      print(GREEN+"\n"+f"{reply}"+"\n"+RESET)
-      messages.append({"role": "assistant", "content": reply})
+#def chatGPT():
+#  import openai
+#  openai.api_key = "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"
+#  RED = '\033[91m'
+#  GREEN = '\033[92m'
+#  YELLOW = '\033[93m'
+#  BLUE = '\033[94m'
+#  MAGENTA = '\033[95m'
+#  CYAN = '\033[96m'
+#  RESET = '\033[0m'
+#  messages = [ {"role": "system", "content": 
+#              "You are a intelligent assistant."} ]
+#  while True:
+#      message = input(YELLOW+">>>"+RESET)
+#      if message == "q":
+#        break
+#      if message:
+#          messages.append(
+#              {"role": "user", "content": message},
+#          )
+#          chat = openai.ChatCompletion.create(
+#              model="gpt-3.5-turbo", messages=messages
+#          )
+#      reply = chat.choices[0].message.content
+#      print(GREEN+"\n"+f"{reply}"+"\n"+RESET)
+#      messages.append({"role": "assistant", "content": reply})
 
 #-------------------------------------- Density --------------------------------------#
 
@@ -482,3 +482,37 @@ def madlib():
   #printing story
   print('One day I was taking a '+number1+' Mile walk, when I walked by '+place1+' I saw a '+noun1+' by the path, But I kept walking, then I got tired of walking so I got in the '+adjective1+' Car that I found. I was driving the '+adjective1+' Car and I needed to eat so I stopped at a '+number2+'-11. The '+adjective2+' Worker Said “'+interjection1+', I never thought I would see YOU!” “That was odd,” I said under my breath. I continued until I saw tons of '+nameofcandy1+'’s I grabbed '+number3+' '+nameofcandy1+'’s and brought them to the counter, “That will be $'+number4+'” said the worker. “OK!” I said')
   ran = input("Press Enter to Continue")
+
+#-------------------------------------- Word Guessing --------------------------------------#
+
+def weather():
+  import python_weather
+
+  import asyncio
+  import os
+
+  async def getweather():
+    city = input("Weather for what city? ")
+    # declare the client. the measuring unit used defaults to the metric system (celcius, km/h, etc.)
+    async with python_weather.Client(unit=python_weather.IMPERIAL) as client:
+      # fetch a weather forecast from a city
+      weather = await client.get(city)
+    
+    # returns the current day's forecast temperature (int)
+    print(weather.current.temperature)
+    
+    # get the weather forecast for a few days
+    for forecast in weather.forecasts:
+      print(forecast)
+      
+      # hourly forecasts
+      for hourly in forecast.hourly:
+        print(f' --> {hourly!r}')
+
+  #if __name__ == '__main__':
+    # see https://stackoverflow.com/questions/45600579/asyncio-event-loop-is-closed-when-getting-loop
+    # for more details
+    #if os.name == 'nt':
+      #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    
+  asyncio.run(getweather())

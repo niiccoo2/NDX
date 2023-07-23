@@ -81,7 +81,7 @@ else:
 #playsound('./windows-xp-startup-sound.mp3')
 #readline
 while True:
-  print(BLUE + "\n\nQ: Quit\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc\n11. Snake\n12. Gambling >:\n13. Pig Latin Translator\n14. Sign Out\n15. Mad-Libs" + RESET)
+  print(BLUE + "\n\nQ: Quit\n0. Help\n1. Text Editor\n2. Calculator\n3. Random Number Game\n4. Rock Paper Scissors\n5. Tic Tac Toe\n6. Word Guess\n7. Magic 8 Ball\n8. ChatGPT\n9. Reaction Tester\n10. Density Calc\n11. Snake\n12. Gambling >:\n13. Pig Latin Translator\n14. Sign Out\n15. Mad-Libs\n16. Weather" + RESET)
   i = input("Where do you want to go? (Type 1 for Item 1, 2 for 2, etc)\n")
   if i.lower()=='q':
     quit()
@@ -106,7 +106,8 @@ while True:
     passs = "dumb123"
     passg = input("What is the password?\n")
     if passg==passs:
-      chatGPT()
+      #chatGPT()
+      print("Sorry this is not working right now...")
     print("Wrong")
     passn=passn+1
     if passn==3:
@@ -128,3 +129,5 @@ while True:
     signout()
   if i==15:
     madlib()
+  if i==16:
+    weather()
