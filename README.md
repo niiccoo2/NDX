@@ -1,5 +1,5 @@
 # NDX
-A python OS
+The NDX Project
 
 This is a consept tool with a softwere menu and basic softwere.
 
