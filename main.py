@@ -49,8 +49,8 @@ def settings():
   pick=input('Pick a setting: ')
 
   if pick==1:
-    print("(1 is On, Anything else is off.)")
-    print("Current value: ")
+    print("Current value: "+ndxfast)
+    ndxfast=input("Enter new value: ")
 
 
 
