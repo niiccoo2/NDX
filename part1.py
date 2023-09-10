@@ -544,33 +544,135 @@ def madlib():
 #-------------------------------------- Word Guessing --------------------------------------#
 
 def weather():
-  import python_weather
-
   import asyncio
-  import os
+  import requests
+  import json
+  import tkinter as tk
+  from PIL import ImageTk, Image
+  window_closed = False
+  #global current_unit
+  current_unit = "F"
+  def get_weather(current_unit):
+      nonlocal window_closed  # Use nonlocal to modify the outer variable
+      if not window_closed:
+        location = ''
+        location = location_entry.get()
+        api_key = "e400d74e423bf565abbc9a72c38b5e84"  # replace with your actual API key
+        if location == "":
+          location='Seattle'
+        # construct the API URL
+        url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}"
 
-  async def getweather():
-    city = input("Weather for what city? ")
-    # declare the client. the measuring unit used defaults to the metric system (celcius, km/h, etc.)
-    async with python_weather.Client(unit=python_weather.IMPERIAL) as client:
-      # fetch a weather forecast from a city
-      weather = await client.get(city)
-    
-    # returns the current day's forecast temperature (int)
-    print(weather.current.temperature)
-    
-    # get the weather forecast for a few days
-    for forecast in weather.forecasts:
-      print(forecast)
-      
-      # hourly forecasts
-      for hourly in forecast.hourly:
-        print(f' --> {hourly!r}')
+        try:
+            # send the HTTP request
+            response = requests.get(url)
+            response.raise_for_status()  # raise an exception if the HTTP request fails
+
+            # parse the JSON response data into a Python dictionary
+            data = json.loads(response.text)
+
+            # extract the relevant weather information from the dictionary
+            temperature_k = data["main"]["temp"]
+            temperature_min_k = data["main"]["temp_min"]
+            temperature_max_k = data["main"]["temp_max"]
+            humidity = data["main"]["humidity"]
+            description = data["weather"][0]["description"]
+
+            if current_unit == "F":
+                temperature_f = (temperature_k * 9/5) - 459.67
+                temperature_min_f = (temperature_min_k * 9/5) - 459.67
+                temperature_max_f = (temperature_max_k * 9/5) - 459.67
+
+                temperature_label.config(text=f"Temperature: {temperature_f:.1f}°F")
+                high_label.config(text=f"High: {temperature_max_f:.1f}°F")
+                low_label.config(text=f"Low: {temperature_min_f:.1f}°F")
+            else:
+                temperature_c = temperature_k - 273.15
+                temperature_min_c = temperature_min_k - 273.15
+                temperature_max_c = temperature_max_k - 273.15
+
+                temperature_label.config(text=f"Temperature: {temperature_c:.1f}°C")
+                high_label.config(text=f"High: {temperature_max_c:.1f}°C")
+                low_label.config(text=f"Low: {temperature_min_c:.1f}°C")
+            humidity_label.config(text=f"Humidity: {humidity}%")
+            description_label.config(text=f"Description: {description.capitalize()}")
+            area_label.config(text="Weather for: "+location)
+
+        except requests.exceptions.HTTPError as e:
+            # handle HTTP errors
+            temperature_label.config(text="Temperature: N/A")
+            high_label.config(text="High: N/A")
+            low_label.config(text="Low: N/A")
+            humidity_label.config(text="Humidity: N/A")
+            description_label.config(text=f"Error: {e}")
+            area_label.config(text="Weather for: N/A")
+
+        except (KeyError, json.JSONDecodeError) as e:
+            # handle JSON parsing errors
+            temperature_label.config(text="Temperature: N/A")
+            high_label.config(text="High: N/A")
+            low_label.config(text="Low: N/A")
+            humidity_label.config(text="Humidity: N/A")
+            description_label.config(text=f"Error: Invalid location or API key")
+            area_label.config(text="Weather for: N/A")
+
+  def change_units():
+      global current_unit
+      if current_unit == "F":
+          current_unit = "C"
+      else:
+          current_unit = "F"
+      get_weather(current_unit)
+
+  # print the weather information
+  #print(f"The temperature in {location} is{temperature_f: .1f} degrees Fahrenheit.")
+  #print(f"The high in {location} is{temperature_max_f: .1f} degrees Fahrenheit.")
+  #print(f"The low in {location} is{temperature_min_f: .1f} degrees Fahrenheit.")
+  #print(f"The humidity in {location} is {humidity}%.")
+  #print(f"The weather in {location} is described as {description}.")
+
+  def on_closing():
+    nonlocal window_closed  # Use nonlocal to modify the outer variable
+    window_closed = True
+    root.destroy()
+
+  root = tk.Tk()
+  root.title("Nico's Weather App")
+
+  img = Image.open("./download.ico")
+  icon = ImageTk.PhotoImage(img)
+  root.iconphoto(True, icon)
+
+  location_label = tk.Label(root, text="Enter location:")
+  location_entry = tk.Entry(root)
+  get_weather_button = tk.Button(root, text="Get Weather", command=lambda: get_weather(current_unit))
+  change_unit = tk.Button(root, text="Change Units", command=change_units)
+  temperature_label = tk.Label(root, text="Temperature: ")
+  high_label = tk.Label(root, text="High: ")
+  low_label = tk.Label(root, text="Low: ")
+  humidity_label = tk.Label(root, text="Humidity: ")
+  description_label = tk.Label(root, text="Description: ")
+  area_label = tk.Label(root, text="Weather for: ",)
+
+  location_label.grid(row=0, column=0, padx=10, pady=10)
+  location_entry.grid(row=0, column=1, padx=10, pady=10)
+  get_weather_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
+  change_unit.grid(row=1, column=2, columnspan=2, padx=10, pady=10)
+  temperature_label.grid(row=2, column=0, padx=10, pady=10)
+  high_label.grid(row=3, column=0, padx=10, pady=10)
+  low_label.grid(row=4, column=0, padx=10, pady=10)
+  humidity_label.grid(row=5, column=0, padx=10, pady=10)
+  description_label.grid(row=6, column=0, padx=10, pady=10)
+  area_label.grid(row=7, column=0, padx=10, pady=10)
+
+  root.protocol("WM_DELETE_WINDOW", on_closing)
+  
+  root.mainloop()
 
   #if __name__ == '__main__':
     # see https://stackoverflow.com/questions/45600579/asyncio-event-loop-is-closed-when-getting-loop
     # for more details
     #if os.name == 'nt':
       #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-    
-  asyncio.run(getweather())
+  if not window_closed:  
+    asyncio.run(get_weather(current_unit))
