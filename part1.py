@@ -550,7 +550,7 @@ def weather():
   import tkinter as tk
   from PIL import ImageTk, Image
   window_closed = False
-  #global current_unit
+  global current_unit
   current_unit = "F"
   def get_weather(current_unit):
       nonlocal window_closed  # Use nonlocal to modify the outer variable
