@@ -10,7 +10,7 @@
 #  | |              | || |              | || |              | |
 #  | '--------------' || '--------------' || '--------------' |
 #   '----------------'  '----------------'  '----------------' 
-# THIS WAS LAST UPDATED ON 6/14/2023 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
+# THIS WAS LAST UPDATED ON 11/17/2023 THE UP TO DATE GITHUB IS github.com/niiccoo2/NDX
 
 # imports
 from time import sleep
